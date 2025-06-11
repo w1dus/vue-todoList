@@ -1,38 +1,33 @@
 
 
 <template>
-  <h1>{{message}}</h1>
-  <button @click="reserveMessage">reverse Message</button>
-  <!-- <button @click="message += '!'">Append "!"</button> -->
-  <button @click="appendI">Append "!"</button>
-  <a href="https://www.naver.com" @click.prevent="notify">네이버 링크 이동이지만, preventDefault()</a>
+
+  <button @click="show = !show">Toggle List</button>
+  <button @click="list.push(list.length + 1)">Push Number</button>
+  <button @click="list.pop()">Pop Number</button>
+  <button @click="list.reverse()">Reverse List</button>
+
+  <ul v-if="show && list.length">
+    <li v-for="item of list" v-bind:key="item.id">{{ item }}</li>
+  </ul>
+  <p v-else-if="list.length">List is not empty. but hidden</p>
+  <p v-else>list empty.</p>
 </template>
 
-<style>
-  button{ display: block; margin: 0 auto; margin-bottom: 10px;  }
-</style>
+
+
 
 <script>
 export default {
   data(){
     return{
-      message: "Hello World!",
+      show : true, 
+      list : [1,2,3]
     }
   },
-  methods:{
-    appendI(){
-      this.message += '!';
-    },
-    reserveMessage(){
-      // console.log(this.message);
-      this.message = this.message.split('').reverse().join('');
-      // console.log(this.message)
-    },
-    notify(){
-      alert('navigation was prevented.')
-      //e.preventDefault(); 를 하고싶으면 @click.prevent를 꼭 써주자!
-    }
-  }
+  // methos:{
+
+  // }
 }
 </script>
 
@@ -41,7 +36,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }

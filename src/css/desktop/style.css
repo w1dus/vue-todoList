@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Assacom FreeGothic';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/AssacomFreeGothic/AssacomFreeGothic.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/fonts-archive/AssacomFreeGothic/AssacomFreeGothic.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/fonts-archive/AssacomFreeGothic/AssacomFreeGothic.otf') format('opentype'),
+        url('https://cdn.jsdelivr.net/gh/fonts-archive/AssacomFreeGothic/AssacomFreeGothic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'KCC-Hanbit';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/KCC-Hanbit/KCC-Hanbit.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/fonts-archive/KCC-Hanbit/KCC-Hanbit.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/fonts-archive/KCC-Hanbit/KCC-Hanbit.otf') format('opentype'),
+        url('https://cdn.jsdelivr.net/gh/fonts-archive/KCC-Hanbit/KCC-Hanbit.ttf') format('truetype');
+  }
+
+
+/* 초기화 코드  */
+*{ color: #303030; font-family: inherit; margin: 0; padding: 0; box-sizing: border-box; }
+a{ color: inherit; text-decoration: unset; }
+ul,ol{ list-style: none; }
+button{ cursor: pointer; }
+
+/* todo 목록 */
+.todo_bg{   font-family: 'KCC-Hanbit'; background-color: #efefef;  }
+.centerBox{ position: relative; min-height: 100vh; margin: 0 auto; padding: 50px 20px 50px 20px; max-width: 500px; width: 100%; }
+
+.todo_bg .bigTitle{ font-size: 60px; color: #222; font-family: 'Assacom FreeGothic';  }
+.addBtn{ cursor: pointer; display: block; color: #fff; margin: 20px 0; padding: 2px 10px; background-color: #0575F3;  display: flex; align-items: center; gap: 5px; border: none;  }
+.addBtn svg{ width: 15px; }
+.addBtn svg path{ color: #fff !important; }
+
+.itemList{ margin-top: 20px; }
+.itemList > li + li{ margin-top: 10px; }
+.itemList .item{ display: flex; gap: 10px; background-color: #fff; padding: 20px 20px; border-radius: 10px; box-shadow: 1px 1px 10px #DCE2E7; }
+.itemList .item .title{ font-size: 20px; }
+.itemList .item .content{ margin-top: 10px; font-size: 14px; color: #7f7f7f; }
+.itemList .item .label{ display: inline-block; margin-top: 10px; padding: 2px 5px; border-radius: 2px; background-color: #efefef; color: #7f7f7f; font-size:13px; }
+.itemList .item .label.blue{ color: #0575F3; background: #d1e7ff; }
+.itemList .item .label.red{ color: #ff5050; background: #ffdddd; }
+.itemList .item .buttonBox{ margin-top: 10px; display: flex; align-items: center; gap: 5px; }
+.itemList .item .buttonBox button{ padding: 2px 5px; border: 1px solid #cecece; background: #fff; display: flex; align-items: center; gap: 2px; }
+.itemList .item .buttonBox button svg{ width: 15px; }
+.itemList input[type="checkbox"]{ display: none; }
+.itemList input[type="checkbox"] + .item .checkAfter{ display: none; }
+.itemList input[type="checkbox"]:checked + .item .checkAfter{ display: block; }
+.itemList input[type="checkbox"]:checked + .item .checkBefore{ display: none; }
+
+
+.closeBtn{ position: absolute; right: 0; top: 50px; background: transparent; border: none;  }
+
+.writeWrap{ margin-top: 50px; }
+.writeWrap .contentWrap + .contentWrap{ margin-top: 30px; }
+.writeWrap .contentWrap .title{ color: #7f7f7f;  }
+.writeWrap .contentWrap .iptBox{ margin-top: 10px; }
+.writeWrap .contentWrap .ipt{ padding: 20px; width: 100%; border: 1px solid #efefef; border-radius: 4px; }
+.writeWrap .contentWrap textarea.ipt{ height: 200px; resize: none; }
+
+.submitBtn{ margin-top: 20px; padding: 20px; background-color: #0575F3; box-shadow: 1px 1px 20px #90c4ff; color: #fff; border: none; width: 100%; border-radius: 4px;  }
